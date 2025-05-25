@@ -5,6 +5,10 @@ export const SectionWrapper = styled.section`
   background-color: #f4f7f6; /* A light grey/off-white background */
   text-align: center; /* Center the optional h2 title */
 
+  @media (max-width: 768px) {
+    padding: 20px 10px;
+  }
+
   h2 {
     font-size: 2.5rem;
     color: #333;
@@ -28,6 +32,16 @@ export const SectionWrapper = styled.section`
       transform 0.4s ease;
     display: flex !important; /* Ensure slides are flex items if they contain flex children */
     justify-content: center; /* Center ProjectCard within the slide */
+  }
+
+  @media (max-width: 768px) {
+    .slick-slider {
+      max-width: 95vw;
+    }
+
+    .slick-slide {
+      padding: 0 5px; /* Reduced spacing for smaller screens */
+    }
   }
 
   .slick-slide > div {

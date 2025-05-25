@@ -30,6 +30,15 @@ export const Title = styled.h1`
   text-align: center; /* Ensured text alignment */
 `;
 
+export const ProfileImage = styled.img`
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid white;
+`;
+
 export const IntroParagraph = styled.p`
   font-size: 1.2rem;
   line-height: 1.6;

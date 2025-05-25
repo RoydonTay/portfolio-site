@@ -6,6 +6,7 @@ const Header: React.FC = () => {
   return (
     <S.HeaderContainer>
       <S.BackgroundImageDiv />
+      <S.ProfileImage src="https://via.placeholder.com/150" alt="Profile Picture" />
       <Fade triggerOnce={true} duration={1000}>
         <S.Title>[Your Name]</S.Title>
       </Fade>
