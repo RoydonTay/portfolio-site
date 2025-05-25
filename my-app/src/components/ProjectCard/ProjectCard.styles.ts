@@ -15,20 +15,18 @@ export const CardWrapper = styled.a`
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 16px;
-  margin: 16px;
-  width: 300px; /* Adjust as needed */
+  margin: 0; /* Removed margin, will be handled by slick-slide padding */
+  width: 300px; /* Fixed width for consistent card size in carousel */
   min-height: 350px; /* Adjust as needed, ensures consistent card height */
   text-decoration: none;
   color: inherit;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out; /* Removed transform from here */
 
   &:hover {
-    transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* transform: scale(1.05); */ /* Removed hover scale to avoid conflict with slick-center scale */
 
     ${ViewMorePrompt} {
       opacity: 1;

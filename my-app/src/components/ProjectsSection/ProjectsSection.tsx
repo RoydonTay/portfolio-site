@@ -1,5 +1,8 @@
 import React from "react";
-import { Fade, Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import ProjectCard, { ProjectCardProps } from "../ProjectCard/ProjectCard";
 import * as S from "./ProjectsSection.styles";
 
@@ -44,18 +47,28 @@ const placeholderProjects: ProjectCardProps[] = [
 ];
 
 const ProjectsSection: React.FC = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    focusOnSelect: true,
+    variableWidth: true,
+    adaptiveHeight: true // Added as recommended for variable content heights
+  };
+
   return (
     <S.SectionWrapper>
       <Fade triggerOnce={true} duration={1000}>
         <h2>My Projects</h2> {/* Optional: Add a title for the section */}
       </Fade>
-      <Slide direction="up" triggerOnce={true} duration={700} cascade damping={0.1}>
-        <S.CardsContainer>
-          {placeholderProjects.map((project, index) => (
-            <ProjectCard key={index} title={project.title} description={project.description} imageUrl={project.imageUrl} projectUrl={project.projectUrl} />
-          ))}
-        </S.CardsContainer>
-      </Slide>
+      <Slider {...settings}>
+        {placeholderProjects.map((project, index) => (
+          <ProjectCard key={index} title={project.title} description={project.description} imageUrl={project.imageUrl} projectUrl={project.projectUrl} />
+        ))}
+      </Slider>
     </S.SectionWrapper>
   );
 };
